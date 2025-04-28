@@ -1,24 +1,26 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
+/**
+ * Локалізації: українська (основна) + англійська.
+ * За замовчуванням застосунок запускається українською.
+ */
 const resources = {
-    ru: {
+    uk: {
         translation: {
             nav: {
-                wms: 'WMS система',
-                yms: 'YMS система',
-                projects: 'Проекты',
-                workflow: 'Как мы работаем',
-                equipment: 'Оборудование',
-                about: 'О нас',
-                contacts: 'Контакты',
+                wms: 'WMS-система',
+                yms: 'YMS-система',
+                projects: 'Проєкти',
+                about: 'Про нас',
+                contacts: 'Контакти',
             },
-            phone: '+7 495 504‑39‑09',
-            cta: 'Получить КП',
-            login: 'Войти',
-            logout: 'Выйти',
-            productList: 'Список товаров',
-            addProduct: 'Добавить товар',
+            phone: '+380 67 123-45-67',
+            cta: 'Отримати КП',
+            login: 'Увійти',
+            logout: 'Вийти',
+            productList: 'Список товарів',
+            addProduct: 'Додати товар',
         },
     },
     en: {
@@ -27,13 +29,10 @@ const resources = {
                 wms: 'WMS system',
                 yms: 'YMS system',
                 projects: 'Projects',
-                workflow: 'How we work',
-                equipment: 'Equipment',
                 about: 'About us',
-                blog: 'Blog',
                 contacts: 'Contacts',
             },
-            phone: '+7 495 504‑39‑09',
+            phone: '+380 67 123-45-67',
             cta: 'Get proposal',
             login: 'Login',
             logout: 'Logout',
@@ -43,13 +42,11 @@ const resources = {
     },
 };
 
-i18n
-    .use(initReactI18next)
-    .init({
-        resources,
-        lng: 'ru',
-        fallbackLng: 'ru',
-        interpolation: { escapeValue: false },
-    });
+i18n.use(initReactI18next).init({
+    resources,
+    lng: 'uk',           // мова за замовчуванням
+    fallbackLng: 'uk',   // резервна мова
+    interpolation: { escapeValue: false },
+});
 
 export default i18n;
